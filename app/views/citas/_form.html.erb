@@ -1,0 +1,59 @@
+<%= form_for @cita, :html => { :class => "form-horizontal cita" } do |f| %>
+
+    <% if @cita.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@cita.errors.count, "error") %> prohibited this cita from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @cita.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :paciente_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :paciente_id, options_from_collection_for_select(@pacientes, "id", "nombre"), {}, { :class => 'form-control' } %>
+    </div>
+    <%= error_span(@cita[:paciente_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :fecha, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fecha, :class => 'form-control' %>
+    </div>
+    <%= error_span(@cita[:fecha]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :hora_inicial, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :hora_inicial, :class => 'form-control' %>
+    </div>
+    <%= error_span(@cita[:hora_inicial]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :hora_final, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :hora_final, :class => 'form-control' %>
+    </div>
+    <%= error_span(@cita[:hora_final]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :descripcion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :descripcion, :class => 'form-control' %>
+    </div>
+    <%= error_span(@cita[:descripcion]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            citas_path, :class => 'btn btn-default' %>
+
+<% end %>

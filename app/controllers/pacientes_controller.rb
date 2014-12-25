@@ -1,4 +1,5 @@
 class PacientesController < ApplicationController
+  before_action :authenticate_usuario!
   before_action :set_paciente, only: [:show, :edit, :update, :destroy]
 
   # GET /pacientes

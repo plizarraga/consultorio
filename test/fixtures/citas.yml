@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  paciente_id: 1
+  fecha: 2014-12-24
+  hora_inicial: 2014-12-24 21:24:07
+  hora_final: 2014-12-24 21:24:07
+  descripcion: MyText
+
+two:
+  paciente_id: 1
+  fecha: 2014-12-24
+  hora_inicial: 2014-12-24 21:24:07
+  hora_final: 2014-12-24 21:24:07
+  descripcion: MyText

@@ -12,7 +12,9 @@
   <dd><%= @paciente.edad %></dd>
 </dl>
 
-<h3>Citas</h3>
+<% if @paciente.citas.count > 0%>
+
+<h3>Citas (<%= @paciente.citas.count.to_s %>)</h3>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -45,6 +47,7 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               pacientes_path, :class => 'btn btn-default'  %>

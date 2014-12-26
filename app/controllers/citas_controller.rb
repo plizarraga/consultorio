@@ -1,7 +1,7 @@
 class CitasController < ApplicationController
   before_action :authenticate_usuario!
   before_action :set_cita, only: [:show, :edit, :update, :destroy]
-  before_action :get_catalogos, only: [:new, :edit]
+  before_action :get_catalogos, only: [:new, :edit, :create]
 
   respond_to :html
 
@@ -29,7 +29,7 @@ class CitasController < ApplicationController
   # POST /citas.json
   def create
     @cita = Cita.new(cita_params)
-    @cita.save
+    
     respond_to do |format|
       if @cita.save
         format.html { redirect_to @cita, notice: 'Cita was successfully created.' }
@@ -72,7 +72,7 @@ class CitasController < ApplicationController
     end
 
     def get_catalogos
-      @pacientes = Paciente.all
+      @pacientes = Paciente.select(:id, :nombre).all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

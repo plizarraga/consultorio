@@ -24,7 +24,7 @@ p6 = Paciente.create({ nombre: "Muhammad Ali ", correo_electronico: "ali@ali.com
 p7 = Paciente.create({ nombre: "Eddie Van Halen", correo_electronico: "eddie@eddie.com", edad: 58 })
 
 # Citas
-c1 = Cita.create({ paciente: p1, fecha: Date.new(2015,1,1), hora_inicial: Time.now, hora_final: Time.now })
-c2 = Cita.create({ paciente: p1, fecha: Date.new(2015,1,10), hora_inicial: Time.now, hora_final: Time.now })
-c3 = Cita.create({ paciente: p1, fecha: Date.new(2015,1,20), hora_inicial: Time.now, hora_final: Time.now })
-c4 = Cita.create({ paciente: p2, fecha: Date.new(2015,2,12), hora_inicial: Time.now, hora_final: Time.now })
+c1 = Cita.create({ paciente: p1, fecha: Date.new(2015,1,1), hora_inicial: Time.now, hora_final: Time.now, descripcion: "Limpieza" })
+c2 = Cita.create({ paciente: p1, fecha: Date.new(2015,1,10), hora_inicial: Time.now, hora_final: Time.now, descripcion: "Revision general" })
+c3 = Cita.create({ paciente: p1, fecha: Date.new(2015,1,20), hora_inicial: Time.now, hora_final: Time.now, descripcion: "Endodoncia" })
+c4 = Cita.create({ paciente: p2, fecha: Date.new(2015,2,12), hora_inicial: Time.now, hora_final: Time.now, descripcion: "Endodoncia" })

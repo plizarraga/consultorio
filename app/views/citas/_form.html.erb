@@ -18,7 +18,7 @@
   <div class="form-group">
     <%= f.label :paciente_id, :class => 'control-label col-md-2' %>
     <div class="controls col-md-4">
-      <%= f.collection_select :paciente_id, @pacientes, :id, :nombre, {prompt: "-- Seleccionar --"}, {:class => 'form-control'} %>
+      <%= f.collection_select :paciente_id, @pacientes, :id, :nombre, {:prompt => "-- Seleccionar --"}, {:class => 'form-control'} %>
     </div>
     <%= error_span(@cita[:paciente_id]) %>
   </div>

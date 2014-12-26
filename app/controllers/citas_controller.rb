@@ -1,7 +1,7 @@
 class CitasController < ApplicationController
   before_action :authenticate_usuario!
   before_action :set_cita, only: [:show, :edit, :update, :destroy]
-  before_action :get_catalogos, only: :new
+  before_action :get_catalogos, only: [:new, :edit]
 
   respond_to :html
 
@@ -9,7 +9,6 @@ class CitasController < ApplicationController
   # GET /citas.json
   def index
     @citas = Cita.all
-    respond_with(@citas)
   end
 
   # GET /citas/1
@@ -56,8 +55,8 @@ class CitasController < ApplicationController
     end
   end
 
-  # DELETE /pacientes/1
-  # DELETE /pacientes/1.json
+  # DELETE /citas/1
+  # DELETE /citas/1.json
   def destroy
     @cita.destroy
     respond_to do |format|

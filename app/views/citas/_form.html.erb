@@ -15,45 +15,50 @@
     </div>
   <% end %>
 
-  <div class="control-group">
-    <%= f.label :paciente_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :paciente_id, options_from_collection_for_select(@pacientes, "id", "nombre"), {}, { :class => 'form-control' } %>
+  <div class="form-group">
+    <%= f.label :paciente_id, :class => 'control-label col-md-2' %>
+    <div class="controls col-md-4">
+      <%= f.collection_select :paciente_id, @pacientes, :id, :nombre, {prompt: "-- Seleccionar --"}, {:class => 'form-control'} %>
     </div>
     <%= error_span(@cita[:paciente_id]) %>
   </div>
-  <div class="control-group">
-    <%= f.label :fecha, :class => 'control-label' %>
-    <div class="controls">
+
+  <div class="form-group">
+    <%= f.label :fecha, :class => 'control-label col-md-2' %>
+    <div class="controls  col-md-4">
       <%= f.text_field :fecha, :class => 'form-control' %>
     </div>
     <%= error_span(@cita[:fecha]) %>
   </div>
-  <div class="control-group">
-    <%= f.label :hora_inicial, :class => 'control-label' %>
-    <div class="controls">
+  <div class="form-group">
+    <%= f.label :hora_inicial, :class => 'control-label col-md-2' %>
+    <div class="controls  col-md-4">
       <%= f.text_field :hora_inicial, :class => 'form-control' %>
     </div>
     <%= error_span(@cita[:hora_inicial]) %>
   </div>
-  <div class="control-group">
-    <%= f.label :hora_final, :class => 'control-label' %>
-    <div class="controls">
+  <div class="form-group">
+    <%= f.label :hora_final, :class => 'control-label col-md-2' %>
+    <div class="controls  col-md-4">
       <%= f.text_field :hora_final, :class => 'form-control' %>
     </div>
     <%= error_span(@cita[:hora_final]) %>
   </div>
-  <div class="control-group">
-    <%= f.label :descripcion, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :descripcion, :class => 'form-control' %>
+  <div class="form-group">
+    <%= f.label :descripcion, :class => 'control-label col-md-2' %>
+    <div class="controls  col-md-4">
+      <%= f.text_area :descripcion, :class => 'form-control' %>
     </div>
     <%= error_span(@cita[:descripcion]) %>
   </div>
 
-
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  <div class="form-group">
+    <div class="controls  col-md-4 col-md-offset-2">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
             citas_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
 
 <% end %>

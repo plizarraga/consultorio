@@ -12,6 +12,40 @@
   <dd><%= @paciente.edad %></dd>
 </dl>
 
+<h3>Citas</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:fecha) %></th>
+      <th><%= model_class.human_attribute_name(:hora_inicial) %></th>
+      <th><%= model_class.human_attribute_name(:hora_final) %></th>
+      <th><%= model_class.human_attribute_name(:descripcion) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @paciente.citas.each do |cita| %>
+      <tr>
+        <td><%= link_to cita.id, cita_path(cita) %></td>
+        <td><%= cita.fecha %></td>
+        <td><%= cita.hora_inicial.strftime("%I:%M %p")  %></td>
+        <td><%= cita.hora_final.strftime("%I:%M %p")  %></td>
+        <td><%= cita.descripcion %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_cita_path(cita), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      cita_path(cita),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to t('.back', :default => t("helpers.links.back")),
               pacientes_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),

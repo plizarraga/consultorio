@@ -5,13 +5,13 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:paciente_id) %>:</strong></dt>
-  <dd><%= @cita.paciente_id %></dd>
+  <dd><%= @cita.paciente.nombre %></dd>
   <dt><strong><%= model_class.human_attribute_name(:fecha) %>:</strong></dt>
   <dd><%= @cita.fecha %></dd>
   <dt><strong><%= model_class.human_attribute_name(:hora_inicial) %>:</strong></dt>
-  <dd><%= @cita.hora_inicial %></dd>
+  <dd><%= @cita.hora_inicial.strftime("%I:%M %p") %></dd>
   <dt><strong><%= model_class.human_attribute_name(:hora_final) %>:</strong></dt>
-  <dd><%= @cita.hora_final %></dd>
+  <dd><%= @cita.hora_final.strftime("%I:%M %p") %></dd>
   <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
   <dd><%= @cita.descripcion %></dd>
 </dl>

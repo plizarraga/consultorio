@@ -15,31 +15,33 @@
     </div>
   <% end %>
 
-  <div class="control-group">
-    <%= f.label :nombre, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :nombre, :class => 'form-control' %>
+  <div class="form-group">
+    <%= f.label :nombre, :class => 'control-label col-md-2' %>
+    <div class="controls col-md-4">
+      <%= f.text_field :nombre, :class => 'form-control col-md-4' %>
     </div>
     <%= error_span(@paciente[:nombre]) %>
   </div>
-  <div class="control-group">
-    <%= f.label :correo_electronico, :class => 'control-label' %>
-    <div class="controls">
+  <div class="form-group">
+    <%= f.label :correo_electronico, :class => 'control-label col-md-2' %>
+    <div class="controls col-md-4">
       <%= f.text_field :correo_electronico, :class => 'form-control' %>
     </div>
     <%= error_span(@paciente[:correo_electronico]) %>
   </div>
-  <div class="control-group">
-    <%= f.label :edad, :class => 'control-label' %>
-    <div class="controls">
+  <div class="form-group">
+    <%= f.label :edad, :class => 'control-label col-md-2' %>
+    <div class="controls col-md-4">
       <%= f.text_field :edad, :class => 'form-control' %>
     </div>
     <%= error_span(@paciente[:edad]) %>
   </div>
 
-
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  <div class="form-group">
+    <div class="controls  col-md-4 col-md-offset-2">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
             pacientes_path, :class => 'btn btn-default' %>
-
+    </div>
+  </div>
 <% end %>

@@ -1,1 +1,34 @@
-<h1>Bienvenido</h1>
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron">
+	<h1>Bienvenido</h1>
+	<p>Consultorio Online es una plataforma con la cual podra llevar el control total de las citas agendadas, historial medico de sus pacientes, contizaciones y mucho mas!.</p>
+	<p>
+		<% if not usuario_signed_in? %>
+		<%= link_to "Iniciar Sesion", new_usuario_session_path, class: "btn btn-lg btn-primary" %></p>
+		<% end %>
+	</div>
+
+
+	<div class="container">
+		<!-- Example row of columns -->
+		<div class="row">
+			<div class="col-md-4">
+				<h2>Fácil de usar</h2>
+				<p>Consultorio Online es intuitivo y sencillo de utilizar. Además, si tienes cualquier duda puedes ponerte en contacto y te responderemos a la breved.</p>
+			</div>
+			<div class="col-md-4">
+				<h2>Desde cualquier lugar</h2>
+				<p>El acceso al sistema puede ser desde cualquier computadora o teléfono móvil. Tu información siempre estará resguardada y segura.</p>
+			</div>
+			<div class="col-md-4">
+				<h2>Ahorra tiempo y dinero</h2>
+				<p>Vuelve más eficiente y organizado tu negocio. Lleva el control de las citas, pacientes e historial medico desde un mismo lugar.</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<!-- FOOTER -->
+		<footer>
+			<p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos y Condiciones</a></p>
+		</footer>

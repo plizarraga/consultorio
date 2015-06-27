@@ -5,7 +5,11 @@ class PacientesController < ApplicationController
   # GET /pacientes
   # GET /pacientes.json
   def index
-    @pacientes = Paciente.all
+    @pacientes = Paciente.where(:id => 5).order(:id).page(params[:page]).per(3)
+  end
+
+  def test
+    
   end
 
   # GET /pacientes/1

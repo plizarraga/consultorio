@@ -8,6 +8,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'pg'
+gem 'puma'
 gem 'rails', '4.2.0'
 gem 'sass-rails', '~> 5.0'
 gem "therubyracer"

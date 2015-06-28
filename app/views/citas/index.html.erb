@@ -2,14 +2,14 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-<table class="table table-striped">
+<table class="table table-striped table-responsive">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:paciente_id) %></th>
       <th><%= model_class.human_attribute_name(:fecha) %></th>
       <th><%= model_class.human_attribute_name(:hora_inicial) %></th>
       <th class="hidden-xs"><%= model_class.human_attribute_name(:hora_final) %></th>
-      <th><%= model_class.human_attribute_name(:descripcion) %></th>
+      <th class="hidden-xs visible-sm"><%= model_class.human_attribute_name(:descripcion) %></th>
       <th class="hidden-xs"><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -20,7 +20,7 @@
         <td><%= cita.fecha %></td>
         <td><%= cita.hora_inicial.strftime("%I:%M %p")  %></td>
         <td class="hidden-xs"><%= cita.hora_final.strftime("%I:%M %p")  %></td>
-        <td><%= cita.descripcion %></td>
+        <td class="hidden-xs visible-sm"><%= cita.descripcion %></td>
         <td class="hidden-xs">
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_cita_path(cita), :class => 'btn btn-default btn-xs' %>

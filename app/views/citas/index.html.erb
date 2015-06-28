@@ -5,25 +5,23 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:paciente_id) %></th>
       <th><%= model_class.human_attribute_name(:fecha) %></th>
       <th><%= model_class.human_attribute_name(:hora_inicial) %></th>
-      <th><%= model_class.human_attribute_name(:hora_final) %></th>
+      <th class="hidden-xs"><%= model_class.human_attribute_name(:hora_final) %></th>
       <th><%= model_class.human_attribute_name(:descripcion) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th class="hidden-xs"><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @citas.each do |cita| %>
       <tr>
-        <td><%= link_to cita.id, cita_path(cita) %></td>
-        <td><%= cita.paciente.nombre %></td>
+        <td><%= link_to cita.paciente.nombre, cita_path(cita) %></td>
         <td><%= cita.fecha %></td>
         <td><%= cita.hora_inicial.strftime("%I:%M %p")  %></td>
-        <td><%= cita.hora_final.strftime("%I:%M %p")  %></td>
+        <td class="hidden-xs"><%= cita.hora_final.strftime("%I:%M %p")  %></td>
         <td><%= cita.descripcion %></td>
-        <td>
+        <td class="hidden-xs">
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_cita_path(cita), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
